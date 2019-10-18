@@ -11,7 +11,7 @@
     --color-back: #CCE7FF;
     --color-front: #0F3557;
     /* opacity */
-
+    --opacity-muted: 0.60;
     /* transitions */
 }
 
@@ -269,7 +269,7 @@ input::placeholder {
 .c-sun {
     height: 22px;
     width: 22px;
-    color: var(--color-front);
+    fill: var(--color-front);
 }
 
 .c-logo .c-sun {
@@ -306,6 +306,10 @@ input::placeholder {
     Utilities: Mute
     Mute with opacity
 */
+
+.u-muted {
+    opacity: var(--opacity-muted);
+}
 
 /*------------------------------------*\
 #STATES
