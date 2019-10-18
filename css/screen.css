@@ -8,7 +8,8 @@
 
 :root {
     /* colors */
-
+    --color-back: #CCE7FF;
+    --color-front: #0F3557;
     /* opacity */
 
     /* transitions */
@@ -27,7 +28,10 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: Work Sans, Helvetica, arial, sans-serif;
+    font-feature-settings: "zero" 1;
+    color: var(--color-front);
+    background-color: var(--color-back);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
