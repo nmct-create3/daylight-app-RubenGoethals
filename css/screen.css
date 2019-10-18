@@ -276,6 +276,16 @@ input::placeholder {
     Main app wrapper
 */
 
+.c-app {
+    margin: auto;
+    padding: 32px;
+    width: 400px;
+}
+
+.c-app__summary {
+    font-size: 28px;
+    line-height: 40px;
+}
 /*
     Component: Horizon
     ---
