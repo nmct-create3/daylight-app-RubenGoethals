@@ -284,7 +284,7 @@ input::placeholder {
 
 .c-app {
     margin: auto;
-    padding: 32px;
+    padding: 32px 0;
     width: 400px;
 }
 
@@ -297,6 +297,50 @@ input::placeholder {
     ---
     Horizon with sun visualisation
 */
+
+.c-horizon__line {
+    border-top: 1px solid var(--color-front);
+    padding-top: 8px;
+    margin-bottom: 34px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-horizon__time {
+    line-height: 14px;
+    font-size: 12px;
+}
+
+.c-horizon__sky-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    padding: 22px 40px 0 0;
+}
+
+.c-horizon__sky {
+    position: relative;
+    height: 100%;
+}
+
+.c-horizon__sun {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    transform: translate(0, 22px);
+}
+
+.c-horizon__sun::before {
+    content: attr(data-time);
+    line-height: 14px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 8px;
+    display: block;
+}
 
 /*------------------------------------*\
 #UTILITIES
