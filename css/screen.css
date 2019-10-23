@@ -8,8 +8,10 @@
 
 :root {
     /* colors */
-    --color-back: #CCE7FF;
-    --color-front: #0F3557;
+    --global-color-back: #CCE7FF;
+    --global-color-front: #0F3557;
+    --global-color-back-night: #0F3557;
+    --global-color-front-night: #CCE7FF;
     /* opacity */
     --opacity-muted: 0.60;
     /* transitions */
@@ -28,10 +30,10 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Work Sans, Helvetica, arial, sans-serif;
+    font-family: 'Work Sans', Helvetica, arial, sans-serif;
     font-feature-settings: "zero" 1;
-    color: var(--color-front);
-    background-color: var(--color-back);
+    color: var(--global-color-front);
+    background-color: var(--global-color-back);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -269,7 +271,7 @@ input::placeholder {
 .c-sun {
     height: 22px;
     width: 22px;
-    fill: var(--color-front);
+    fill: var(--global-color-front);
 }
 
 .c-logo .c-sun {
@@ -283,6 +285,9 @@ input::placeholder {
 */
 
 .c-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     padding: 32px 0;
     width: 400px;
@@ -298,8 +303,12 @@ input::placeholder {
     Horizon with sun visualisation
 */
 
+.c-horizon {
+    margin-top: auto;
+}
+
 .c-horizon__line {
-    border-top: 1px solid var(--color-front);
+    border-top: 1px solid var(--global-color-front);
     padding-top: 8px;
     margin-bottom: 34px;
     display: flex;
@@ -364,6 +373,11 @@ input::placeholder {
 */
 
 /* Night version: just switch the light and dark vars */
+
+.is-night {
+    --global-color-front: var(--global-color-front-night);
+    --global-color-back: var(--global-color-back-night);
+ }
 
 /*------------------------------------*\
 #MEDIA
