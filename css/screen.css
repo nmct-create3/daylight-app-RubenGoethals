@@ -380,8 +380,8 @@ input::placeholder {
  }
 
  .is-day {
-    --global-color-front: var(--global-color-front-night);
-    --global-color-back: var(--global-color-back-night);
+    --global-color-front: var(--global-color-back-night);
+    --global-color-back: var(--global-color-front-night);
  }
 
 /*------------------------------------*\

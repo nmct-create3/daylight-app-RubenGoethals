@@ -8,7 +8,7 @@ function _parseMillisecondsIntoReadableTime(timestamp) {
 	const minutes = '0' + date.getMinutes();
 	// Seconds part from the timestamp (gebruiken we nu niet)
 	// const seconds = '0' + date.getSeconds();
-
+	console.log(hours, minutes);
 	// Will display time in 10:30(:23) format
 	return hours.substr(-2) + ':' + minutes.substr(-2); //  + ':' + s
 }
@@ -30,18 +30,22 @@ let placeSunAndStartMoving = (sunriseTimestamp, sunsetTimestamp) => {
 	// Bekijk of de zon niet nog onder of reeds onder is
 	// Anders kunnen we huidige waarden evalueren en de zon updaten via de updateSun functie.
 	// PS.: vergeet weer niet om het resterend aantal minuten te updaten en verhoog het aantal verstreken minuten.
-	let now = new Date();
-	let sunset = new Date(sunsetTimestamp * 1000);
+
+	let now = new Date(); // Create without parameters a time now!
+	let sunset = new Date(sunsetTimestamp * 1000); // Unix Timestamp in seconds since Jan 01 1970. (UTC) so for Date object * 1000 for ms
 	let sunrise = new Date(sunriseTimestamp * 1000);
 
 	let diff = new Date(sunset.getTime() - now.getTime());
-	let diffMinutes = Math.round(diff / 60000);
+	let diffMinutes = Math.round(diff / 60000); // 60 * 1000 -> for minutes
 
 	let totalTime = new Date(sunset.getTime() - sunrise.getTime());
 	let totalMinutes = Math.round(totalTime / 60000);
+
 	let percentagePassed = 100 - (diffMinutes / totalMinutes) * 100;
-	let y = -0.04 * Math.pow(percentagePassed, 2) + 4 * percentagePassed - 2e-13;
+
+	let y = -0.04 * Math.pow(percentagePassed, 2) + 4 * percentagePassed - 2e-13; //arc movement
 	let x = percentagePassed;
+
 	console.log(totalMinutes, diffMinutes, percentagePassed, y);
 
 	let sun = document.querySelector('.js-sun');
